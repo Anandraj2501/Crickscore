@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Crickscore</title>
+</head>
+
+<body onload="populatedata()" class="bg-gray-50">
+    <div class="overlay fixed z-10 overflow-x-hidden right-0 top-11 float-right hidden w-48 bg-blue-500 border-l-2 border-b-2 border-white  sm:hidden ">
+        <div class="overlay-content text-white font-medium">
+            <a class="links inline-block hover:text-green-200 mb-3 pt-2 pl-2" href="LiveScore.html">Live Score</a>
+            <hr>
+            <!-- <a class="links inline-block hover:text-green-200 mb-3 pt-2 pl-2" href="#">Series</a>
+            <hr>
+            <a class="links inline-block hover:text-green-200 mb-3 pt-2 pl-2" href="#">News</a> -->
+        </div>
+    </div>
+    <div class="navbar p-2 bg-blue-500 text-white">
+        <a class="ml-4 font-semibold text-xl" href="#">Crickscore</a>
+        <div class="hidden ml-10 sm:inline font-medium">
+            <a class="links m-4 hover:text-green-200" href="LiveScore.html">Live Score</a>
+            <!-- <a class="links m-4 hover:text-green-200" href="#">Series</a>
+            <a class="links m-4 hover:text-green-200" href="#">News</a> -->
+        </div>
+        <div
+            class="ham_burger cursor-pointer float-right sm:hidden  traansition ease-in-out duration-200 hover:scale-125">
+            <i class="fa fa-bars text-white"></i>
+        </div>
+        
+    </div>
+    
+    <div class="live_match_container p-5 h-auto bg-blue-400 ">
+        <span class="font-semibold text-base text-white">Recent matches</span>
+        <div class="recent_match_wrapper flex flex-wrap mt-3 mx-0 justify-center md:justify-between gap-x-2 gap-y-2 h-auto 2xl:mx-20 xl:mx-10">
+
+            <!-- <div class="score_card_container inline-block border-0 rounded-xl bg-white h-auto w-80 p-4 align-middle">
+                <div class="score_card_wrapper  h-auto ">
+                    <div class="team1  mb-2">
+                        <span class="team1_name">kkr</span>
+                        <div class="inline-block team1_score float-right"> <span class="team1_runs">185 / </span><span class="team1_wickets">5</span> </div>
+                    </div>
+                    <div class="team2  mb-2">
+                        <span class="team2_name">rcb</span>
+                        <div class="inline-block team2_score float-right"> <span class="team2_runs">185 / </span><span class="team2_wickets">5</span> </div>
+                    </div><hr>
+                    <div class="winner">
+                        kkr won
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- <div class="score_card_container inline-block border-0 rounded-xl bg-white h-auto w-80 p-4 align-middle">
+                <div class="score_card_wrapper  h-auto ">
+                    <div class="team1 mb-2">
+                        <span>kkr</span>
+                        <div class="inline-block team2_score float-right"> <span class="runs">185 / </span><span class>5</span> </div>
+                    </div>
+                    <div class="team2  mb-2">
+                        <span>rcb</span>
+                        <div class="inline-block team2_score float-right"> <span class="runs">185 / </span><span class>5</span> </div>
+                    </div><hr>
+                    <div class="winner">
+                        kkr won
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- <div class="score_card_container inline-block border-0 rounded-xl bg-white h-auto w-80 p-4 align-middle">
+                <div class="score_card_wrapper  h-auto ">
+                    <div class="team1  mb-2">
+                        <span class="team1_name">kkr</span>
+                        <div class="inline-block team2_score float-right"> <span class="runs">185 / </span><span class>5</span> </div>
+                    </div>
+                    <div class="team2  mb-2">
+                        <span class="team2_name">rcb</span>
+                        <div class="inline-block team2_score float-right"> <span class="runs">185 / </span><span class>5</span> </div>
+                    </div><hr>
+                    <div class="winner">
+                        kkr won
+                    </div>
+                </div>
+            </div>
+
+            <div class="score_card_container inline-block border-0 rounded-xl bg-white h-auto w-80 p-4 align-middle">
+                <div class="score_card_wrapper  h-auto ">
+                    <div class="team1  mb-2">
+                        <span>kkr</span>
+                        <div class="inline-block team2_score float-right"> <span class="runs">185 / </span><span class>5</span> </div>
+                    </div>
+                    <div class="team2  mb-2">
+                        <span>rcb</span>
+                        <div class="inline-block team2_score float-right"> <span class="runs">185 / </span><span class>5</span> </div>
+                    </div><hr>
+                    <div class="winner">
+                        kkr won
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+
+    <div class=" mt-2  p-2 px-10  flex gap-x-2 "> 
+        <div class="border border-gray-400 w-1/5 bg-white p-2 hidden md:block rounded-md">
+            <div class="intl_schedule_wrapper ">
+                <div class="truncate text-base">International Schedule </div> <hr class="border border-gray-400">
+                <!-- <div class="intl_schedule_boxes border  border-slate-300 mt-4 ">
+                    <div class="intl_team1_name truncate">Pakistan</div>
+                    <div class="intl_team2_name truncate mt-2">Newzealand</div><hr>
+                    <div class="match_info mt-1 truncate" style="font-size: 1vw;">International/1st odi/29/05/2023</div>
+                </div>
+
+                <div class="intl_schedule_boxes border  border-slate-300 mt-4 ">
+                    <div class="intl_team1_name truncate">Pakistan</div>
+                    <div class="intl_team2_name mt-2 truncate">Newzealand</div><hr>
+                    <div class="match_info mt-1 truncate" style="font-size: 1vw;">International/1st odi/29/05/2023</div>
+                </div>
+
+                <div class="intl_schedule_boxes border  border-slate-300 mt-4">
+                    <div class="intl_team1_name truncate">Pakistan</div>
+                    <div class="intl_team2_name mt-2 truncate">Newzealand</div><hr>
+                    <div class="match_info mt-1 truncate" style="font-size: 1vw;">International/1st odi/29/05/2023</div>
+                </div>
+
+                <div class="intl_schedule_boxes border  border-slate-300 mt-4">
+                    <div class="intl_team1_name truncate">Pakistan</div>
+                    <div class="intl_team2_name mt-2 truncate">Newzealand</div><hr>
+                    <div class="match_info mt-1 truncate" style="font-size: 1vw;">International/1st odi/29/05/2023</div>
+                </div>
+
+                <div class="intl_schedule_boxes border  border-slate-300 mt-4">
+                    <div class="intl_team1_name truncate">Pakistan</div>
+                    <div class="intl_team2_name mt-2 truncate">Newzealand</div><hr>
+                    <div class="match_info mt-1" style="font-size: 1vw;">International/1st odi/29/05/2023</div>
+                </div> -->
+            </div>
+        </div>
+        <div class="border border-gray-400  bg-white p-2 w-full md:w-3/5  rounded-md">
+            <div class="news_wrapper">
+                <div class="truncate text-base">News</div> <hr class="border border-gray-400">
+                <!-- <div class="news_container  border border-slate-300 flex w-full h-auto p-2 mt-4 rounded-md">
+                    <div class="img_container box-border w-1/4" >
+                        <img src="https://www.cricbuzz.com/a/img/v1/205x152/i1/c307049/tim-david-smashed-an-unbeaten.jpg" alt="#" class="w-full rounded-md h-auto max-w-sm">
+                    </div>
+                    <div class="headline_container  ml-2  w-3/4">
+                        <p  style="font-size:2vw;">Lorem iatque laudantium facilis Lorem .</p>
+                        <div class="font-sans font-normal text-base" style="font-size:1vw;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                    </div>
+                </div>
+
+                <div class="news_container  border border-slate-300 flex w-full h-auto p-2 mt-4 rounded-md">
+                    <div class="img_container box-border w-1/4" >
+                        <img src="https://www.cricbuzz.com/a/img/v1/205x152/i1/c307049/tim-david-smashed-an-unbeaten.jpg" alt="#" class="w-full rounded-md h-auto max-w-sm">
+                    </div>
+                    <div class="headline_container  ml-2  w-3/4">
+                        <p  style="font-size:2vw;">Lorem iatque laudantium facilis Lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, veritatis!.</p>
+                        <div class="font-sans font-normal text-base" style="font-size:1vw;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                    </div>
+                </div>
+
+                <div class="news_container  border border-slate-300 flex w-full h-auto p-2 mt-4 rounded-md">
+                    <div class="img_container box-border w-1/4" >
+                        <img src="https://www.cricbuzz.com/a/img/v1/205x152/i1/c307049/tim-david-smashed-an-unbeaten.jpg" alt="#" class="w-full rounded-md h-auto max-w-sm">
+                    </div>
+                    <div class="headline_container  ml-2  w-3/4">
+                        <p  style="font-size:2vw;">Lorem iatque laudantium facilis Lorem .</p>
+                        <div class="font-sans font-normal text-base" style="font-size:1vw;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="border border-gray-400  w-1/5 flex-grow-0 hidden bg-white md:block p-2  rounded-md">
+            <div class="ipl_schedule_wrapper">
+                <div class="truncate text-base">Leagues Schedule </div> <hr class="border border-gray-400">
+                <!-- <div class="intl_schedule_boxes border  border-slate-300 mt-4 ">
+                    <div class="intl_team1_name truncate">CSK</div>
+                    <div class="intl_team2_name truncate mt-2">LSG</div><hr>
+                    <div class="match_info mt-1 truncate" style="font-size: 1vw;">League/40 match/29/05/2023</div>
+                </div>
+
+                <div class="intl_schedule_boxes border  border-slate-300 mt-4 ">
+                    <div class="intl_team1_name truncate">CSK</div>
+                    <div class="intl_team2_name truncate mt-2">LSG</div><hr>
+                    <div class="match_info mt-1 truncate" style="font-size: 1vw;">League/40 match/29/05/2023</div>
+                </div>
+
+                <div class="intl_schedule_boxes border  border-slate-300 mt-4 ">
+                    <div class="intl_team1_name truncate">CSK</div>
+                    <div class="intl_team2_name truncate mt-2">LSG</div><hr>
+                    <div class="match_info mt-1 truncate" style="font-size: 1vw;">League/40 match/29/05/2023</div>
+                </div>
+
+                <div class="intl_schedule_boxes border  border-slate-300 mt-4 ">
+                    <div class="intl_team1_name truncate">CSK</div>
+                    <div class="intl_team2_name truncate mt-2">LSG</div><hr>
+                    <div class="match_info mt-1 truncate" style="font-size: 1vw;">League/40 match/29/05/2023</div>
+                </div>
+
+                <div class="intl_schedule_boxes border  border-slate-300 mt-4 ">
+                    <div class="intl_team1_name truncate">CSK</div>
+                    <div class="intl_team2_name truncate mt-2">LSG</div><hr>
+                    <div class="match_info mt-1 truncate" style="font-size: 1vw;">League/40 match/29/05/2023</div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <script src="crickscore.js"></script>
+</body>
+
+</html>
