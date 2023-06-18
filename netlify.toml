@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/*"
+to = "/crickscore.html"
+status = 200
